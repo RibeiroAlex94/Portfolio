@@ -10,6 +10,11 @@
   --background-color-2: #362b2e;
   --light-grey: rgb(194, 194, 194);
   --border-radius: 30px;
+  --error-message: #FF0000;
+  --modal-color: rgba(0, 0, 0, 0.4);
+  --modal-content-color: #888;
+  --modal-border: #888;
+  --modal-close-color: #aaa; 
 }
 
 /*=============== SCROLLBAR ===============*/
@@ -380,6 +385,7 @@ form {
 .input-box {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .input-box input,
@@ -440,6 +446,49 @@ textarea {
   transition-property: background-color, color;
   cursor: pointer;
 }
+/* message error */
+  .error{
+    color: var(--error-message);
+  }
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 8%%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;  
+  background-color: var(--modal-color);
+  
+}
+.modal-content {
+  background-color: var(--modal-content-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--modal-border);
+  border-radius: 8px;
+  max-width: 600px;  
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  
+}
+.close {
+  color: var(--modal-close-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /*=============== MEDIA QUERY ===============*/
 

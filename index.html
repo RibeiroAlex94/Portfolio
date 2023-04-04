@@ -100,6 +100,10 @@
                             <span class="skill">C#</span>                            
                             <span class="skill">Python</span>                            
                             <span class="skill">Django</span>                            
+                            <span class="skill">Scrum</span>
+                            <span class="skill">Jenkins</span>
+                            <span class="skill">Github</span>
+                            <span class="skill">SVN</span>
                         </div>
     
                         <div class="about-item languages">
@@ -234,24 +238,35 @@
     
                 <section class="content-card contact" id="contact">
                     <h1>Contact</h1>
-                    <form class="form" id="form" action="https://www.freecodecamp.com/email-submit">
+                    <form class="form" id="form" action="#">
                         <div class="input-box">
-                            <input type="text" class="text-input" name="name" placeholder="Name" />
+                            <input onblur="validateName()" id="nameInput" type="text" class="text-input" name="name" placeholder="Name" />
+                            <span id="nameError" class="error"></span>
                         </div>
                         <div class="input-box">
-                            <input type="email" class="text-input" name="email" id="email" placeholder="Email" />
+                            <input onblur="validateEmail()" type="email" class="text-input" name="email" id="emailInput" placeholder="Email" />
+                            <span id="emailError" class="error"></span>
                         </div>
                         <div class="input-box">
-                            <input type="subject" class="text-input" name="subject" id="subject"
+                            <input onblur="validateSubject()" type="subject" class="text-input" name="subject" id="subjectInput"
                                 placeholder="Subject" />
+                                <span id="subjectError" class="error"></span>                                
                         </div>
                         <div class="input-box">
-                            <textarea name="text" class="message" placeholder="Message..."></textarea>
+                            <textarea name="text" class="message" id="textareaInput" minlength="50" onblur="validateMessage()" placeholder="Message..."></textarea>
+                            <span id="messageError" class="error"></span>
                         </div>
                         <div class="input-box">
                             <input type="submit" class="submit-btn" id="submit" value="submit" />
+                            <span id="submitError" class="error"></span>
                         </div>
                     </form>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                          <span class="close">&times;</span>
+                          <p>Thank you for your contact! We will contact you soon.</p>
+                        </div>
+                      </div>                    
                 </section>
             </div>
         </div>
